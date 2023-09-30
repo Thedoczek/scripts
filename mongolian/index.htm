@@ -2,19 +2,104 @@
 	<head>
 		<title>Mongolian</title>
 		<link rel="stylesheet" href="../styles.css">
-		<script async="" src="mongolian.js"></script>
+		<meta charset="UTF-8">
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&display=swap');
+			.mong {
+				font-family: 'Noto Sans Mongolian', 'Noto Sans';
+			}
+			.vertical {
+				text-orientation: sideways;
+				writing-mode: vertical-lr;
+				white-space: pre-wrap;
+			}
+		</style>
 	</head>
 	<body>
-		<table class="three"><tr>
+		<form name="form"><table class="three" align="center"><tr>
 			<td>
-				<textarea name="leftarea" id="leftarea"></textarea>
+				<textarea name="leftarea" id="leftarea" onclick="latmon()" onkeyup="latmon()"></textarea>
 			</td>
 			<td>
-				<textarea name="rightarea" id="rightarea"></textarea>
+				<textarea name="rightarea" id="rightarea" class="mong vertical" onclick="monlat()" onkeyup="monlat()"></textarea>
 			</td>
 			<td>
-				<div id="vertical"></div>
+				<div id="vertical" class="mong vertical"></div>
+			</td>
+		</tr></table></form>
+
+		<table class="letters" align="center"><tr>
+			<td>
+				ᠠ<br><c>a</c>
+			</td>
+			<td>
+				ᠡ<br><c>e</c>
+			</td>
+			<td>
+				ᠢ<br><c>i</c>
+			</td>
+			<td>
+				ᠣ<br><c>o</c>
+			</td>
+			<td>
+				ᠤ<br><c>u</c>
+			</td>
+			<td>
+				ᠥ<br><c>ö<br>o=</c>
+			</td>
+			<td>
+				ᠦ<br><c>ü<br>u=</c><!---->
+			</td>
+			<td>
+				ᠨ<br><c>n</c>
+			</td>
+			<td>
+				ᠩ<br><c>ng</c>
+			</td>
+			<td>
+				ᠪ<br><c>b</c>
+			</td>
+			<td>
+				ᠫ<br><c>p</c>
+			</td>
+			<td>
+				ᠬ<br><c>k<br>q</c>
+			</td>
+			<td>
+				ᠭ<br><c>g</c>
+			</td>
+			<td>
+				ᠮ<br><c>m</c>
+			</td>
+			<td>
+				ᠯ<br><c>l</c>
+			</td>
+			<td>
+				ᠰ<br><c>s</c>
+			</td>
+			<td>
+				ᠱ<br><c>š<br>sh</c>
+			</td>
+			<td>
+				ᠲ<br><c>t</c>
+			</td>
+			<td>
+				ᠳ<br><c>d</c>
+			</td>
+			<td>
+				ᠴ<br><c>č<br>ch</c>
+			</td>
+			<td>
+				ᠵ<br><c>ǰ<br>j</c>
+			</td>
+			<td>
+				ᠶ<br><c>y</c>
+			</td>
+			<td>
+				ᠷ<br><c>r</c>
 			</td>
 		</tr></table>
+		
+		<script async="" src="mongolian.js"></script>
 	</body>
 </html>

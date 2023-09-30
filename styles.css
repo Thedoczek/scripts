@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-body {
+* {
 	font-family: 'Noto Sans';
+	font-size: 20px;
+}
+
+c {
+	font-size: 15px;
+	display: inline;
 }
 
 table {
@@ -12,19 +18,25 @@ tr {
 	flex-wrap: wrap;
 }
 td {
+	text-align: center;
+	vertical-align: center;
+	font-size: 25px;
 	width: 25%;
 	border:1px solid blue;
-	box-sizing:border-box;
+	box-sizing: border-box;
+	padding: 2px;
 }
 table.two tr td {
 	width: 50%;
-	border:1px solid blue;
-	box-sizing:border-box;
 }
 table.three tr td {
 	width: 33%;
-	border:1px solid blue;
-	box-sizing:border-box;
+}
+table.letters {
+	width: 75%;
+}
+table.letters tr td {
+	width: 40px;
 }
 @media screen and (max-width:1440px) {
 	td{width:33%;}
@@ -38,11 +50,14 @@ table.three tr td {
 @media screen and (max-width:480px) {
 	td{width:100%;}
 	table.two tr td{width:100%;}
+	table.letters {width: 100%;}
 }
 
 textarea {
 	background: none;
 	border: none;
+	outline: none;
 	width: 100%;
-	resize: vertical;
+	resize: none;
+	overflow: hidden;
 }
