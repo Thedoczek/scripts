@@ -1,0 +1,12 @@
+{
+    "editor.fontFamily": "'JetBrains Mono', Consolas, 'Courier New', 'Noto Sans Mongolian', monospace",
+    "editor.fontLigatures": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "explorer.confirmDelete": false,
+    "editor.insertSpaces": false,
+    "workbench.preferredDarkColorTheme": "Kimbie Dark",
+    "workbench.colorTheme": "Kimbie Dark",
+    "editor.unicodeHighlight.nonBasicASCII": false
+}
