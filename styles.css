@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+body {
+	font-family: 'Noto Sans';
+}
+table {
+	width: 100%;
+}
+tr {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+td {
+	width: 25%;
+	border:1px solid blue;
+	box-sizing:border-box;
+}
+table#two tr td {
+	width: 50%;
+	border:1px solid blue;
+	box-sizing:border-box;
+}
+@media screen and (max-width:1440px) {
+	td{width:33%;}
+}
+@media screen and (max-width:960px) {
+	td{width:50%;}
+}
+@media screen and (max-width:480px) {
+	td{width:100%;}
+	table#two tr td{width:100%;}
+}
