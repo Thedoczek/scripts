@@ -2,6 +2,7 @@
 body {
 	font-family: 'Noto Sans';
 }
+
 table {
 	width: 100%;
 }
@@ -15,8 +16,13 @@ td {
 	border:1px solid blue;
 	box-sizing:border-box;
 }
-table#two tr td {
+table.two tr td {
 	width: 50%;
+	border:1px solid blue;
+	box-sizing:border-box;
+}
+table.three tr td {
+	width: 33%;
 	border:1px solid blue;
 	box-sizing:border-box;
 }
@@ -26,7 +32,17 @@ table#two tr td {
 @media screen and (max-width:960px) {
 	td{width:50%;}
 }
+@media screen and (max-width:720px) {
+	table.three tr td{width:100%;}
+}
 @media screen and (max-width:480px) {
 	td{width:100%;}
-	table#two tr td{width:100%;}
+	table.two tr td{width:100%;}
+}
+
+textarea {
+	background: none;
+	border: none;
+	width: 100%;
+	resize: vertical;
 }
