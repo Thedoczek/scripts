@@ -1,12 +1,12 @@
 <html>
 	<head>
-		<title>Mongolian</title>
+		<title>Mongolian script</title>
 		<link rel="stylesheet" href="../styles.css">
 		<meta charset="UTF-8">
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&display=swap');
-			.mong {
-				font-family: 'Noto Sans Mongolian', 'Noto Sans';
+			.mong, table.mong tr td {
+				font-family: 'Noto Sans', 'Noto Sans Mongolian';
 			}
 			.vertical {
 				text-orientation: sideways;
@@ -15,20 +15,21 @@
 			}
 		</style>
 	</head>
-	<body>
-		<form name="form"><table class="three" align="center"><tr>
+	<body align="center">
+		<h1>Mongolian script</h1><a href="..\"><c>Back to scripts</c></a><hr>
+		<form name="form"><table class="three"><tr>
 			<td>
-				<textarea name="leftarea" id="leftarea" onclick="latmon()" onkeyup="latmon()"></textarea>
-			</td>
-			<td>
-				<textarea name="rightarea" id="rightarea" class="mong vertical" onclick="monlat()" onkeyup="monlat()"></textarea>
+				<textarea placeholder="Latin text" name="leftarea" id="leftarea" onclick="latmon()" onkeyup="latmon()"></textarea>
 			</td>
 			<td>
 				<div id="vertical" class="mong vertical"></div>
 			</td>
+			<td>
+				<textarea placeholder="Mongolian text" name="rightarea" id="rightarea" class="mong vertical" onclick="monlat()" onkeyup="monlat()"></textarea>
+			</td>
 		</tr></table></form>
 
-		<table class="letters" align="center"><tr>
+		<table class="letters mong" align="center"><tr>
 			<td>
 				ᠠ<br><c>a</c>
 			</td>
@@ -63,10 +64,10 @@
 				ᠫ<br><c>p</c>
 			</td>
 			<td>
-				ᠬ<br><c>k<br>q</c>
+				ᠬ<br><c>q<br>k</c>
 			</td>
 			<td>
-				ᠭ<br><c>g</c>
+				ᠭ<br><c>ɣ<br>g</c>
 			</td>
 			<td>
 				ᠮ<br><c>m</c>
@@ -96,7 +97,68 @@
 				ᠶ<br><c>y</c>
 			</td>
 			<td>
-				ᠷ<br><c>r</c>
+				ᠸ<br><c>w<br>v</c>
+			</td>
+			<td>
+				ᠹ<br><c>f</c>
+			</td>
+			<td>
+				ᠼ<br><c>c</c>
+			</td>
+			<td>
+				ᠽ<br><c>z</c>
+			</td>
+			<td>
+				ᠾ<br><c>h</c>
+			</td>
+			<td>
+				ᠿ<br><c>ž<br>zh</c>
+			</td>
+			<td>
+				ᡀ<br><c>lh</c>
+			</td>
+		</tr><tr>
+			<td>
+				᠐<br><c>0</c>
+			</td>
+			<td>
+				᠑<br><c>1</c>
+			</td>
+			<td>
+				᠒<br><c>2</c>
+			</td>
+			<td>
+				᠓<br><c>3</c>
+			</td>
+			<td>
+				᠔<br><c>4</c>
+			</td>
+			<td>
+				᠕<br><c>5</c>
+			</td>
+			<td>
+				᠖<br><c>6</c>
+			</td>
+			<td>
+				᠗<br><c>7</c>
+			</td>
+			<td>
+				᠘<br><c>8</c>
+			</td>
+			<td>
+				᠙<br><c>9</c>
+			</td>
+			<td>
+				᠂<br><c>,</c>
+			</td>
+			<td>
+				᠃<br><c>.</c>
+			</td>
+			<td>
+				᠁<br><c>...</c>
+			</td>
+			<td>
+				᠄<br><c>:</c>
 			</td>
 		</tr></table>
 		
