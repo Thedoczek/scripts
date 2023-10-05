@@ -12,6 +12,9 @@ body {
 
 c {
 	font-size: 15px;
+}
+
+table.langs tr td c {
 	text-decoration: underline;
 }
 

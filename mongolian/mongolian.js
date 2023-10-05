@@ -1,10 +1,23 @@
-lat1 = ["o=", "u=", "k", "qe", "qi", "qö", "qü", "g", "ɣe", "ɣi", "ɣö", "ɣü", "sh", "ch", "zh", "j", "v", "nɣ", "\\\\."];
-lat2 = ["ö", "ü", "q", "ke", "ki", "kö", "kü", "ɣ", "ge", "gi", "gö", "gü", "š", "č", "ž", "ǰ", "w", "ng", "."];
-lat = ["lh", "a", "e", "i", "o", "u", "ö", "ü", "ng", "n", "b", "p", "k", "q", "g", "ɣ", "m", "l", "s", "š", "t", "d", "č", "ǰ", "y", "r", "w", "f", "c", "z", "h", "ž", "-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "\\.\\.\\.", ",", "\\.", ":"];
-mon = ["ᡀ", "ᠠ", "ᠡ", "ᠢ", "ᠣ", "ᠤ", "ᠥ", "ᠦ", "ᠩ", "ᠨ", "ᠪ", "ᠫ", "ᠬ", "ᠬ", "ᠭ", "ᠭ", "ᠮ", "ᠯ", "ᠰ", "ᠱ", "ᠲ", "ᠳ", "ᠴ", "ᠵ", "ᠶ", "ᠷ", "ᠸ", "ᠹ", "ᠼ", "ᠽ", "ᠾ", "ᠿ", "᠎", "᠐", "᠑", "᠒", "᠓", "᠔", "᠕", "᠖", "᠗", "᠘", "᠙", "᠁", "᠂", "᠃", "᠄"];
+lat1 = ["o=", "u=", "e=", "ö=", "ü=", "ē=", "k", "qe", "qi", "qö", "qü", "g", "ɣe", "ɣi", "ɣö", "ɣü", "sh", "ch", "zh", "j", "v", "nɣ", "\\\\."];
+lat2 = ["ö", "ü", "ē", "o", "u", "e", "q", "ke", "ki", "kö", "kü", "ɣ", "ge", "gi", "gö", "gü", "š", "č", "ž", "ǰ", "w", "ng", "."];
+lat = ["G", "K", "ZH", "CH", "lh", "a", "e", "ē", "i", "o", "u", "ö", "ü", "ng", "n", "b", "p", "k", "q", "g", "ɣ", "m", "l", "s", "š", "t", "d", "č", "ǰ", "y", "r", "w", "f", "c", "z", "h", "ž", "-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "\\.\\.\\.", ",", "\\.", ":"];
+mon = ["ᠺ", "ᠻ", "ᡁ", "ᡂ", "ᡀ", "ᠠ", "ᠡ", "ᠧ", "ᠢ", "ᠣ", "ᠤ", "ᠥ", "ᠦ", "ᠩ", "ᠨ", "ᠪ", "ᠫ", "ᠬ", "ᠬ", "ᠭ", "ᠭ", "ᠮ", "ᠯ", "ᠰ", "ᠱ", "ᠲ", "ᠳ", "ᠴ", "ᠵ", "ᠶ", "ᠷ", "ᠸ", "ᠹ", "ᠼ", "ᠽ", "ᠾ", "ᠿ", "᠎", "᠐", "᠑", "᠒", "᠓", "᠔", "᠕", "᠖", "᠗", "᠘", "᠙", "᠁", "᠂", "᠃", "᠄"];
 
 function latmon() {
-	let car = document.form.leftarea.value.toLowerCase();
+	// Convert letters to lowercase while keeping G, K, CH, ZH
+	let car = document.form.leftarea.value.split('');
+	for (let i = 0; i < car.length; ++i) {
+		if (!['G', 'K', 'Z', 'C', 'H'].includes(car[i])) {
+			car[i] = car[i].toLowerCase();
+		} else if (i < car.length-1 && car[i+1] != 'H' && ['Z', 'C'].includes(car[i])) {
+			car[i] = car[i].toLowerCase();
+		} else if (i > 0 && car[i] == 'H' && !['Z', 'C'].includes(car[i-1])) {
+			car[i] = car[i].toLowerCase();
+		}else if (i == 0 && car[i] == 'H') {
+			car[i] = car[i].toLowerCase();
+		}
+	}
+	car = car.join('')
 
 	// Convert special characters while keeping cursor position
 	for (let i = 0; i < lat1.length; ++i) {
@@ -14,9 +27,9 @@ function latmon() {
 	const diff = document.form.leftarea.value.length - car.length;
 	document.form.leftarea.value = car;
 	document.form.leftarea.selectionEnd = cursorPos + diff;
-
+	
 	// Update mongolian side
-	for (let i = 0; i < lat.length; i++) {
+	for (let i = 0; i < lat.length; ++i) {
 		car = car.replace(new RegExp(lat[i], "g"), mon[i]);
 	}
 	document.form.rightarea.value = car;
@@ -33,7 +46,7 @@ function monlat() {
 	document.getElementById("vertical").innerHTML = car;
 
 	// Update latin side
-	for (let i = 0; i < lat.length; i++) {
+	for (let i = 0; i < lat.length; ++i) {
 		car = car.replace(new RegExp(mon[i], "g"), lat[i]);
 	}
 	for (let i = 0; i < lat1.length; ++i) {
