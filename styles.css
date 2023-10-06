@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@font-face {
+	font-family: 'Noto Sans';
+	src: url('NotoSans-Regular.ttf');
+}
+
+* {
+	font-family: 'Noto Sans';
+}
 
 h1 {
 	margin: 0px;
@@ -7,7 +14,6 @@ body {
 	background-color: #001860;
 	color: #e0e8ff;
 	font-size: 20px;
-	font-family: 'Noto Sans';
 }
 
 c {
