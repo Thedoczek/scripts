@@ -98,7 +98,15 @@ table.title tr td {
 	table.title tr td{width:100%;}
 	table.letters {width: 100%;}
 }
-/* try out @media (hover: none) */
+@media screen and (hover: none) {
+	td{width:100%;}
+	table.two tr td{width:100%;}
+	table.two tr td{width:100%;}
+	table.title tr td{width:100%;}
+	table.letters {width: 100%;}
+	table.title {width: 100%;}
+	table.three tr td{width:100%;}
+}
 
 textarea {
 	background: none;
