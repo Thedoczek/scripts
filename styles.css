@@ -11,8 +11,8 @@ h1 {
 	margin: 0px;
 }
 body {
-	background-color: #001860;
-	color: #e0e8ff;
+	background-color: #003660;
+	color: #e0f2ff;
 	font-size: 20px;
 }
 
@@ -41,7 +41,7 @@ tr {
 }
 td {
 	width: 25%;
-	border:1px solid #e0e8ff;
+	border:1px solid #e0f2ff;
 	box-sizing: border-box;
 	padding: 2px;
 	font-size: 20px;
@@ -119,20 +119,20 @@ textarea {
 	color: #e0e8ff;
 }
 textarea::placeholder {
-	color: #e0e8ff80
+	color: #e0f2ff80
 }
 
 table.langs tr td a, table.langs tr td a:visited {
-	color: #e0e8ff
+	color: #e0f2ff
 }
 a, a:visited, table.langs tr td a:hover {
 	font-size:30px;
-	color: #e0e8ffc0;
+	color: #e0f2ffc0;
 	text-decoration: none;
 }
 a:hover {
 	font-size:30px;
-	color: #e0e8ff80
+	color: #e0f2ff80
 }
 
 h1 {
