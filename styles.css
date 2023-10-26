@@ -1,21 +1,31 @@
 @font-face {
 	font-family: 'Noto Sans';
 	src: url('https://thedoczek.github.io/scripts/NotoSans.ttf');
+	src: url('NotoSans.ttf')
 }
 @font-face {
 	font-family: 'Noto Sans';
 	src: url('https://thedoczek.github.io/scripts/NotoSans-Italic.ttf');
+	src: url('NotoSans-Italic.ttf');
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'Noto Sans Mongolian';
 	src: url('https://thedoczek.github.io/scripts/mongolian/NotoSansMongolian.ttf');
+	src: url('mongolian/NotoSansMongolian.ttf');
 }
 
 @font-face {
 	font-family: 'Noto Sans Arabic';
 	src: url('https://thedoczek.github.io/scripts/arabic/NotoSansArabic.ttf');
+	src: url('arabic/NotoSansArabic.ttf');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	src: url('https://thedoczek.github.io/scripts/hangul/NotoSansKR.ttf');
+	src: url('hangul/NotoSansKR.ttf');
 }
 
 * {
