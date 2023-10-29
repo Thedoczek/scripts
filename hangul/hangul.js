@@ -2,7 +2,7 @@ lat = ["ng", "g", "kk", "n", "d", "tt", "l", "m", "b", "pp", "ss", "s", "jj", "j
 han = ["ᆼ", "ᄀ", "ᄁ", "ᄂ", "ᄃ", "ᄄ", "ᄅ", "ᄆ", "ᄇ", "ᄈ", "ᄊ", "ᄉ", "ᄍ", "ᄌ", "ᄎ", "ᄏ", "ᄐ", "ᄑ", "ᄒ", "ᅤ", "ᅧ", "ᅫ", "ᅢ", "ᅣ", "ᅥ", "ᅨ", "ᅪ", "ᅬ", "ᅭ", "ᅯ", "ᅰ", "ᅱ", "ᅲ", "ᅳ", "ᅴ", "ᅴ", "ᅡ", "ᅦ", "ᅩ", "ᅮ", "ᅵ", "-"];
 typ = ["c", "C", "C", "C", "C", "C", "C", "C", "C", "C", "C", "C", "C", "C", "C", "C", "C", "C", "C", "V", "V", "V", "V", "V", "V", "V", "V", "V", "V", "V", "V", "V", "V", "V", "V", "V", "V", "V", "V", "V", "V", " "];
 hanf = ["ᆼ", "ᆨ", "ᆩ", "ᆫ", "ᆮ", "ᄄ", "ᆯ", "ᆷ", "ᆸ", "ᄈ", "ᆻ", "ᆺ", "ᄍ", "ᆽ", "ᆾ", "ᆿ", "ᇀ", "ᇁ", "ᇂ"];
-han1 = ["ᆨᆺ", "ᆫᆽ", "ᆫᇂ", "ᆯᆨ", "ᆯᆷ", "ᆯᆸ", "ᆯᆺ", "ᆯᇀ", "ᆯᇁ", "ᆯᇂ", "ᆸᆸ"];
+han1 = ["ᆨᆺ", "ᆫᆽ", "ᆫᇂ", "ᆯᆨ", "ᆯᆷ", "ᆯᆸ", "ᆯᆺ", "ᆯᇀ", "ᆯᇁ", "ᆯᇂ", "ᆸᆺ"];
 han2 = ["ᆪ", "ᆬ", "ᆭ", "ᆰ", "ᆱ", "ᆲ", "ᆳ", "ᆴ", "ᆵ", "ᆶ", "ᆹ"];
 
 function lathan() {
@@ -19,7 +19,7 @@ function lathan() {
 		} else if (car[i] == "y" && !['a', 'e', 'o', 'u', 'i'].includes(car[i+1])) {
 			car[i] = "";
 			document.form.leftarea.selectionEnd = document.form.leftarea.selectionEnd - 1;
-		} else if (car[i] == "w" && !['a', 'e,', 'o', 'i'].includes(car[i+1])) {
+		} else if (car[i] == "w" && !['a', 'e	', 'o', 'i'].includes(car[i+1])) {
 			car[i] = "";
 			document.form.leftarea.selectionEnd = document.form.leftarea.selectionEnd - 1;
 		}
@@ -45,13 +45,15 @@ function lathan() {
 	
 	if (ccv[0] == "V") {car[0] = "ᄋ" + car[0]}
 	for (let i = 0; i < car.length; ++i) {
-		if (ccv[i+1] != "V" && ccv[i] == "C") {
+		if (car[i] == "ᆼ" && ccv[i+1] == "V") {
+			car[i] = "ᆫᄀ";
+			ccv[i] = "cC";
+		} else if (ccv[i+1] != "V" && ccv[i] == "C") {
 			if (hanf[han.indexOf(car[i])] != car[i]) {
 				ccv[i] = "c";
 			}
 			car[i] = hanf[han.indexOf(car[i])];
-		}
-		if (ccv[i+1] == "V" && !['C', 'c'].includes(ccv[i])) {
+		} else if (ccv[i+1] == "V" && !['C', 'c'].includes(ccv[i])) {
 			car[i] = car[i] + "ᄋ";
 		}
 	}
@@ -71,7 +73,8 @@ function lathan() {
 
 	autoResize(document.getElementById("leftarea"));
 	autoResize(document.getElementById("rightarea"));
-}        // ㄱ    ㄲ    ㄴ    ㄷ    ㄸ    ㄹ    ㅁ    ㅂ    ㅃ    ㅅ    ㅆ    ㅇ    ㅈ    ㅉ    ㅊ    ㅋ    ㅌ    ㅍ    ㅎ
+}
+
 initial = ['ᄀ', 'ᄁ', 'ᄂ', 'ᄃ', 'ᄄ', 'ᄅ', 'ᄆ', 'ᄇ', 'ᄈ', 'ᄉ', 'ᄊ', 'ᄋ', 'ᄌ', 'ᄍ', 'ᄎ', 'ᄏ', 'ᄐ', 'ᄑ', 'ᄒ'];
 medial = ['ᅡ', 'ᅢ', 'ᅣ', 'ᅤ', 'ᅥ', 'ᅦ', 'ᅧ', 'ᅨ', 'ᅩ', 'ᅪ', 'ᅫ', 'ᅬ', 'ᅭ', 'ᅮ', 'ᅯ', 'ᅰ', 'ᅱ', 'ᅲ', 'ᅳ', 'ᅴ', 'ᅵ'];
 final = ['', 'ᆨ', 'ᆩ', 'ᆪ', 'ᆫ', 'ᆬ', 'ᆭ', 'ᆮ', 'ᆯ', 'ᆰ', 'ᆱ', 'ᆲ', 'ᆳ', 'ᆴ', 'ᆵ', 'ᆶ', 'ᆷ', 'ᆸ', 'ᆹ', 'ᆺ', 'ᆻ', 'ᆼ', 'ᆽ', 'ᆾ', 'ᆿ', 'ᇀ', 'ᇁ', 'ᇂ'];
@@ -79,19 +82,39 @@ final = ['', 'ᆨ', 'ᆩ', 'ᆪ', 'ᆫ', 'ᆬ', 'ᆭ', 'ᆮ', 'ᆯ', 'ᆰ', 'ᆱ
 function hanlat() {
 	// detect and decompose syllables into jamo
 	let car = document.form.rightarea.value.split('');
+	let ccv = document.form.rightarea.value.split('');
 	for (let i = 0; i < car.length; ++i) {
 		if (car[i].charCodeAt(0) >= 44032 && car[i].charCodeAt(0) <= 55203) {
-			let c = car[i].charCodeAt(0) - 44032; console.log(c);
+			console.log(car[i]);
+			// c = 
+			let c = car[i].charCodeAt(0) - 44032; console.log(c, c%28);
 			let f = final[c % 28];
-			c = Math.floor(c/28); console.log(c);
-			let m = medial[c % 20];
-			c = Math.floor(c/20); console.log(c);
-			let j = initial[c % 16];
-			car[i] = j+m+f+"-";
+			c = (c-c%28)/28; console.log(c, c%21);
+			let m = medial[c % 21];
+			c = (c-c%21)/21; console.log(c, c%19);
+			let j = initial[c % 19];
+			car[i] = j+m+f;
+			if (f == "") {
+				if (j == 'ᄋ') ccv[i] = "vV";
+				else ccv[i] = "CV";
+			} else {
+				if (j == 'ᄋ') ccv[i] = "vVc";
+				else ccv[i] = "CVc";
+			}
+		} else {
+			if (car[i] == 'ᄋ') ccv[i] = "v";
+			else if (initial.includes(car[i])) ccv[i] = "C";
+			else if (medial.includes(car[i])) ccv[i] = "V";
+			else if (final.includes(car[i])) ccv[i] = "c";
+			else ccv[i] = " ";
 		}
 	}
+	car = car.join('').split('');
+	ccv = ccv.join('').split('');
+	for (let i = 0; i < car.length; ++i) {
+		if (ccv[i] == "c" && ccv[i+1] == "v") car[i] = car[i] + "-";
+	}
 	car = car.join('');
-	console.log(car);
 
 	// run transcribe()
 	
