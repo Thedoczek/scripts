@@ -27,14 +27,14 @@ function latmon() {
 		car = car.replace(new RegExp(lat[i], "g"), mon[i]);
 	}
 	document.form.rightarea.value = car;
+
+	autoResize(document.getElementById("leftarea"));
+	autoResize(document.getElementById("rightarea"));
 	if (car != "") {
 		document.getElementById("vertical").innerHTML = car;
 	} else {
 		document.getElementById("vertical").innerHTML = "<span style=\"color: #e0f2ff80\">Mongolian text</span>";
 	}
-
-	autoResize(document.getElementById("leftarea"));
-	autoResize(document.getElementById("rightarea"));
 }
 
 function monlat() {
