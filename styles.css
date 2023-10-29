@@ -160,6 +160,19 @@ a:hover {
 	color: #e0f2ff80
 }
 
+table.langs tr td na {
+	color: #ffe0f2
+}
+na, table.langs tr td na:hover {
+	font-size:30px;
+	color: #ffe0f2c0;
+	text-decoration: none;
+}
+na:hover {
+	font-size:30px;
+	color: #ffe0f280
+}
+
 h1 {
 	font-weight: bold;
 	font-size: 40px;

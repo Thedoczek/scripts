@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Hangul</title>
+		<link rel="stylesheet" href="../styles.css">
+		<meta charset="UTF-8">
+		<style>
+			.kor, table.kor tr td {
+				font-family: 'Noto Sans KR', 'Noto Sans';
+			}
+		</style>
+	</head>
+	<body align="center">
+		<h1>Hangul</h1><a href="../"><c>Back to scripts</c></a><hr>
+		<form name="form"><table class="three"><tr>
+			<td>
+				<textarea placeholder="Latin transliteration" name="leftarea" id="leftarea" onclick="lathan()" onkeyup="lathan()"></textarea>
+			</td>
+			<td>
+				<div id="transcript" class="kor transcript"><span style="color: #e0f2ff80">Latin transcription</span></div>
+			</td>
+			<td>
+				<textarea placeholder="Hangul text" name="rightarea" id="rightarea" class="kor" onclick="hanlat()" onkeyup="hanlat()"></textarea>
+			</td>
+		</tr></table></form>
+
+		<table class="letters kor" align="center"><tr>
+			<td>
+				ㄱ<br><c>g<br>/k/</c>
+			</td>
+		</tr><tr>
+			<td>
+				ㅏ<br><c>a<br>/a/</c>
+			</td>
+		</tr><tr>
+			<td>
+				ㄱ<br><c>g<br>/k̚/</c>
+			</td>
+		</tr></table>
+		
+		<script async="" src="hangul.js"></script>
+	</body>
+</html>
