@@ -140,6 +140,7 @@ table.title tr td {
 	table.title {width: 100%;}
 	table.three tr td{width:100%;}
 	:root {font-size:250%}
+	table.letters tr td {width: 80px}
 }
 
 textarea {
