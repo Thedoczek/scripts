@@ -69,7 +69,7 @@ tr {
 	flex-wrap: wrap;
 }
 table.letters tr {
-	align-items: center;
+	align-items: flex-start;
 	justify-content: center;
 }
 td {
