@@ -28,7 +28,8 @@
 	src: url('hangul/NotoSansKR.ttf');
 }
 
-* {
+:root {
+	font-size: 125%;
 	font-family: 'Noto Sans';
 }
 
@@ -38,11 +39,11 @@ h1 {
 body {
 	background-color: #003660;
 	color: #e0f2ff;
-	font-size: 20px;
+	font-size: 1rem;
 }
 
 c {
-	font-size: 15px;
+	font-size: 0.75rem;
 }
 
 table.langs tr td c {
@@ -64,12 +65,16 @@ tr {
 	display: flex;
 	flex-wrap: wrap;
 }
+table.letters tr {
+	align-items: center;
+	justify-content: center;
+}
 td {
 	width: 25%;
 	border:1px solid #e0f2ff;
 	box-sizing: border-box;
 	padding: 2px;
-	font-size: 20px;
+	font-size: 1rem;
 }
 td.title {
 	width: 50%;
@@ -87,7 +92,7 @@ table.letters {
 table.letters tr td {
 	width: 40px;
 	text-align: center;
-	font-size: 25px;
+	font-size: 1.25rem;
 	border: none;
 	padding: 0px;
 }
@@ -140,7 +145,7 @@ textarea {
 	width: 100%;
 	resize: none;
 	overflow: hidden;
-	font-size: 20px;
+	font-size: 1rem;
 	color: #e0e8ff;
 }
 textarea::placeholder {
@@ -151,12 +156,12 @@ table.langs tr td a, table.langs tr td a:visited {
 	color: #e0f2ff
 }
 a, a:visited, table.langs tr td a:hover {
-	font-size:30px;
+	font-size: 1.5rem;
 	color: #e0f2ffc0;
 	text-decoration: none;
 }
 a:hover {
-	font-size:30px;
+	font-size: 1.5rem;
 	color: #e0f2ff80
 }
 
@@ -164,16 +169,16 @@ table.langs tr td na {
 	color: #ffe0f2
 }
 na, table.langs tr td na:hover {
-	font-size:30px;
+	font-size: 1.5rem;
 	color: #ffe0f2c0;
 	text-decoration: none;
 }
 na:hover {
-	font-size:30px;
+	font-size: 1.5rem;
 	color: #ffe0f280
 }
 
 h1 {
 	font-weight: bold;
-	font-size: 40px;
+	font-size: 2rem;
 }
