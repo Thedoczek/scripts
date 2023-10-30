@@ -30,6 +30,9 @@
 
 :root {
 	font-size: 125%;
+}
+
+* {
 	font-family: 'Noto Sans';
 }
 
@@ -136,6 +139,7 @@ table.title tr td {
 	table.letters {width: 100%;}
 	table.title {width: 100%;}
 	table.three tr td{width:100%;}
+	:root {font-size:250%}
 }
 
 textarea {
