@@ -188,7 +188,7 @@ function transcribe(car) {
 		}
 	}
 	car = car.join('');
-	// Enters do not work - issue made on SOverflow
+	car = car.replace(/\n/g, "<br>");
 	
 	if (car != "") {
 		document.getElementById("transcript").innerHTML = car;
