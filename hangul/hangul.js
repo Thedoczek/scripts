@@ -19,7 +19,7 @@ function lathan() {
 		} else if (car[i] == "y" && !['a', 'e', 'o', 'u', 'i'].includes(car[i+1])) {
 			car[i] = "";
 			document.form.leftarea.selectionEnd = document.form.leftarea.selectionEnd - 1;
-		} else if (car[i] == "w" && !['a', 'e	', 'o', 'i'].includes(car[i+1])) {
+		} else if (car[i] == "w" && !['a', 'e', 'o', 'i'].includes(car[i+1])) {
 			car[i] = "";
 			document.form.leftarea.selectionEnd = document.form.leftarea.selectionEnd - 1;
 		}
@@ -60,19 +60,23 @@ function lathan() {
 	car = car.join("");
 	ccv = ccv.join("");
 
-	//	 Remove hyphens and combine consonant clusters
+	// combine consonant clusters
 	for (let i = 0; i < han1.length; ++i) {
 		car = car.replace(new RegExp(han1[i], "g"), han2[i]);
 	}
-	car = car.replace(new RegExp("-", "g"), "");
 
 	// run transcribe()
+	transcribe(car);
 
+	// Remove hyphens
+	car = car.replace(new RegExp("-", "g"), "");
 
 	document.form.rightarea.value = car;
 
 	autoResize(document.getElementById("leftarea"));
 	autoResize(document.getElementById("rightarea"));
+
+	return car;
 }
 
 initial = ['ᄀ', 'ᄁ', 'ᄂ', 'ᄃ', 'ᄄ', 'ᄅ', 'ᄆ', 'ᄇ', 'ᄈ', 'ᄉ', 'ᄊ', 'ᄋ', 'ᄌ', 'ᄍ', 'ᄎ', 'ᄏ', 'ᄐ', 'ᄑ', 'ᄒ'];
@@ -115,9 +119,10 @@ function hanlat() {
 		if (ccv[i] == "c" && ccv[i+1] == "v") car[i] = car[i] + "-";
 	}
 	car = car.join('');
+	// Some vowel clusters are still indistinguishable (e-oe vs eo-e etc.)
 
 	// run transcribe()
-	
+	transcribe(car);
 
 	// transliterate
 	for (let i = 0; i < han2.length; ++i) {
@@ -137,10 +142,59 @@ function hanlat() {
 	autoResize(document.getElementById("rightarea"));
 }
 
-function transcribe() {
-	// iterate through korean text and find initials
-	// do table
-	// yay
+pron = [['g', 'kk', 'kg', 'k', 'ng', 'ng', 'nk', 'tg', 'lg', 'lg', 'mg', 'lg', 'lg', 'lg', 'pg', 'lk', 'mg', 'bg', 'pg', 'tg', 'tg', 'ngg', 'tg', 'tg', 'kg', 'tg', 'pg', 'hk'],
+['kk', 'kkk', 'kkk', 'kk', 'nkk', 'nkk', 'nkk', 'tkk', 'lkk', 'lkk', 'mkk', 'lkk', 'lkk', 'lkk', 'pkk', 'lkk', 'mkk', 'bkk', 'pkk', 'tkk', 'tkk', 'ngkk', 'tkk', 'tkk', 'kkk', 'tkk', 'ptt', 'hkk'],
+['n', 'ngn', 'kn', 'kn', 'nn', 'nn', 'nn', 'tn', 'ln', 'kn', 'mn', 'ln', 'ln', 'ln', 'pn', 'ln', 'mn', 'mn', 'pn', 'tn', 'nt', 'ngn', 'tn', 'tn', 'kn', 'tn', 'pn', 'hn'],
+['d', 'kd', 'kd', 'kd', 'nd', 'nd', 'nt', 'tt', 'ld', 'kd', 'md', 'pd', 'ld', 'ld', 'pd', 'lt', 'md', 'pd', 'pd', 'tt', 'tt', 'ngd', 'tt', 'tt', 'kd', 'tt', 'pd', 'ht'],
+['tt', 'ktt', 'ktt', 'ktt', 'ntt', 'ntt', 'ntt', 'ttt', 'ltt', 'ktt', 'mtt', 'ptt', 'ltt', 'ltt', 'ptt', 'ltt', 'mtt', 'ptt', 'ptt', 'ttt', 'ttt', 'ngtt', 'ttt', 'ttt', 'ktt', 'ttt', 'ptt', 'htt'],
+['r', 'gn', 'kr', 'kr', 'nn', 'nn', 'nr', 'tr', 'll', 'kr', 'mn', 'ln', 'lr', 'lr', 'pr', 'lr', 'mn', 'mn', 'pr', 'tr', 'tr', 'ngn', 'tr', 'tr', 'kr', 'tr', 'pr', 'r'],
+['m', 'gm', 'km', 'km', 'nm', 'nm', 'nm', 'tm', 'lm', 'km', 'mm', 'lm', 'lm', 'lm', 'pm', 'lm', 'mm', 'mm', 'pm', 'tm', 'tm', 'ngm', 'tm', 'tm', 'kd', 'tm', 'pm', 'hm'],
+['b', 'gb', 'kb', 'kb', 'nb', 'nb', 'np', 'tb', 'lb', 'kb', 'mb', 'lb', 'lb', 'lb', 'pb', 'lp', 'mb', 'pp', 'pb', 'tb', 'tb', 'ngb', 'tb', 'tb', 'kb', 'tb', 'pb', 'hb'],
+['pp', 'gpp', 'kpp', 'kpp', 'npp', 'npp', 'npp', 'tpp', 'lpp', 'kpp', 'mpp', 'lpp', 'lpp', 'lpp', 'ppp', 'lpp', 'mpp', 'ppp', 'ppp', 'tpp', 'tpp', 'ngpp', 'tpp', 'tpp', 'kpp', 'tpp', 'ppp', 'hpp'],
+['s', 'ks', 'ks', 'ks', 'ns', 'ns', 'ns', 'ts', 'ls', 'ks', 'ms', 'ls', 'ls', 'ls', 'ps', 'ls', 'ms', 'ps', 'ps', 'ts', 'sss', 'ngs', 'ts', 'ts', 'ks', 'ts', 'ps', 'hs'],
+['ss', 'kss', 'kss', 'kss', 'nss', 'nss', 'nss', 'tss', 'lss', 'kss', 'mss', 'lss', 'lss', 'lss', 'pss', 'lss', 'mss', 'pss', 'pss', 'tss', 'ssss', 'ngss', 'tss', 'tss', 'kss', 'tss', 'pss', 'hss'],
+['', 'g', 'kkh', 'ks', 'n', 'nj', 'nh', 't', 'r', 'lg', 'lm', 'lb', 'ls', 'lt', 'lp', 'lh', 'm', 'p', 'ps', 's', 'ss', 'ngh', 't', 't', 'kh', 'tch', 'ph', 'h'],
+['j', 'kj', 'kj', 'kj', 'nj', 'nj', 'nch', 'tj', 'lj', 'kj', 'mj', 'pj', 'lj', 'lj', 'pj', 'lch', 'mj', 'pj', 'pj', 'tj', 'tch', 'ngj', 'tj', 'tj', 'kj', 'tj', 'pj', 'hj'],
+['jj', 'kjj', 'kjj', 'kjj', 'njj', 'njj', 'njj', 'tjj', 'ljj', 'kjj', 'mjj', 'pjj', 'ljj', 'ljj', 'pjj', 'ljj', 'mjj', 'pjj', 'pjj', 'tjj', 'tjj', 'ngjj', 'tjj', 'tjj', 'kjj', 'tjj', 'pjj', 'hjj'],
+['ch', 'kch', 'kch', 'kch', 'nch', 'nch', 'nch', 'tch', 'lch', 'kch', 'mch', 'pch', 'lch', 'lch', 'pch', 'lch', 'mch', 'pch', 'pch', 'tch', 'tch', 'ngch', 'tch', 'tch', 'kch', 'tch', 'pch', 'hch'],
+['k', 'kk', 'kk', 'k', 'nk', 'nk', 'nk', 'tk', 'lk', 'lk', 'mk', 'lk', 'lk', 'lk', 'pk', 'lk', 'mk', 'bk', 'pk', 'tk', 'tk', 'ngk', 'tk', 'tk', 'kk', 'tk', 'pk', 'hk'],
+['t', 'kt', 'kt', 'kt', 'nt', 'nt', 'nt', 'tt', 'lt', 'kt', 'mt', 'pt', 'lt', 'lt', 'pt', 'lt', 'mt', 'pt', 'pt', 'tt', 'tt', 'ngt', 'tt', 'tt', 'kt', 'tt', 'pt', 'ht'],
+['p', 'gp', 'kp', 'kp', 'np', 'np', 'np', 'tp', 'lp', 'kp', 'mp', 'lp', 'lp', 'lp', 'pp', 'lp', 'mp', 'pp', 'pp', 'tp', 'tp', 'ngp', 'tp', 'tp', 'kp', 'tp', 'pp', 'hg'],
+['h', 'k', 'kkh', 'ks', 'nh', 'nch', 'nh', 't', 'lh', 'lk', 'mh', 'lp', 'lh', 'lh', 'ph', 'lh', 'mh', 'p', 'ph', 't', 't', 'ngh', 'tch', 'tch', 'k', 't', 'p', 'h'],
+['', 'k', 'k', 'k', 'n', 'n', 'n', 't', 'l', 'k', 'm', 'l', 'l', 'l', 'p', 'l', 'm', 'p', 'p', 't', 't', 'ng', 't', 't', 'k', 't', 'p', 't']];
+
+function transcribe(car) {
+	let ccv = car;
+	car = car.split('');
+	ccv = ccv.split('');
+	for (let i = 0; i < car.length; ++i) {
+		if (initial.includes(car[i])) ccv[i] = "C";
+		else if (medial.includes(car[i])) ccv[i] = "V";
+		else if (final.includes(car[i])) ccv[i] = "c";
+		else ccv[i] = " ";
+	}
+	for (let i = 0; i < car.length; ++i) {
+		if (ccv[i] == "V") {
+			car[i] = lat[han.indexOf(car[i])];	
+		} else if (ccv[i] == "C") {
+			if (ccv[i-1] != "c") {
+				car[i] = pron[initial.indexOf(car[i])][0];
+			} else {
+				car[i] = pron[initial.indexOf(car[i])][final.indexOf(car[i-1])];
+				car[i-1] = "";
+			}
+		} else if (ccv[i] == "c" && ccv[i+1] != "C") {
+			car[i] = pron[pron.length-1][final.indexOf(car[i])];
+		}
+	}
+	car = car.join('');
+	// Enters do not work - issue made on SOverflow
+	
+	if (car != "") {
+		document.getElementById("transcript").innerHTML = car;
+	} else {
+		document.getElementById("transcript").innerHTML = "<span style=\"color: #e0f2ff80\">Latin transcription</span>";
+	}
 }
 
 function autoResize(textarea) {
