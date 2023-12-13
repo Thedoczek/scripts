@@ -23,6 +23,12 @@
 }
 
 @font-face {
+	font-family: 'Noto Sans Armenian';
+	src: url('https://thedoczek.github.io/scripts/armenian/NotoSansArmenian.ttf');
+	src: url('armenian/NotoSansArmenian.ttf');
+}
+
+@font-face {
 	font-family: 'Noto Sans KR';
 	src: url('https://thedoczek.github.io/scripts/hangul/NotoSansKR.ttf');
 	src: url('hangul/NotoSansKR.ttf');
@@ -43,6 +49,7 @@ body {
 	background-color: #003660;
 	color: #e0f2ff;
 	font-size: 1rem;
+	text-align: center;
 }
 
 c {
