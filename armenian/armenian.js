@@ -44,8 +44,10 @@ function armlat() {
 	for (let i = 0; i < lat1.length; ++i) {
 		car = car.replace(new RegExp(lat1[i], "g"), lat2[i]);
 	}
-	car = car.replace("\\?", "?")
-	car = car.replace("\\.", ".")
+	console.log(car);
+	car = car.replace(/\\\./g, ".");
+	car = car.replace(/\\\?/g, "?");
+	console.log(car);
 	document.form.leftarea.value = car;
 
 	autoResize(document.getElementById("leftarea"));
