@@ -1,0 +1,59 @@
+Script Lang	Users	Notes
+
+ALPHABETS (Easy):
+Adlam	1 	37mln
+Armenian	1	5.3mln
+Avestan	Expired
+Bassa Vah	1	400k	dead script
+Braille	many	worldwide
+Carian	0	0	dead language
+Caucasian albanian	0	0	dead language
+Coptic	1	10mln	liturgical use
+Cyryllic	many	250mln
+Deseret	0	0	dead script
+Elbasan	0	0	dead script
+Fraser	1	500k
+Georgian	1	4mln
+Glagolitic	0	0	dead script (might still do it though)
+Gothic	0	0	dead language
+Greek	1	13.5mln
+
+
+
+ABUGIDAS (Medium):
+Ahom	0	0	Dead language
+Balinese	3	6mln	almost dead script, used in ceremonies
+Batak	7	3.3mln
+Bengali	8	290mln+
+Bhaiksuki	0	0	Dead lanugage
+Brahmi	0	0	Dead script
+Buhid	1	12k
+Chakma	1	700k
+Cham	1	490k
+Devanagari	many	1mld+
+Dogri	0	0	Dead script
+Ge'ez	some	50mln	(Ethiopian)
+Grantha	1	80mln	ceremonial use
+Gujarati	some	60mln
+Gunjala Gondi	1	3mln
+Lontara	3	6mln
+Makasar	0	0	Replaced by Lontara
+
+SYLLABARIES (More annoying abugidas):
+Bamum	1	500k
+Cherokee	1	5k
+Cypriot	0	0	dead language
+
+ABJADS (Very Hard):
+Arabic	Many	400mln+
+Chorasmian	0	0	dead language
+Elymaic	0	0	dead language
+
+Logographic (Never):
+Anatolian hieroglyphs	0	0	dead language
+Egyptian hieroglyphs	0	0	dead language
+
+Other:
+Duployan shorthand	?	?	Shorthand system - very hard
+
+

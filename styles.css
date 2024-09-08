@@ -17,8 +17,8 @@
 }
 
 @font-face {
-	font-family: 'Noto Sans Arabic';
-	src: url('https://thedoczek.github.io/scripts/arabic/NotoSansArabic.ttf');
+	font-family: 'Noto Sans Devanagari';
+	src: url('https://thedoczek.github.io/scripts/devanagari/NotoSansDevanagari.ttf');
 	src: url('arabic/NotoSansArabic.ttf');
 }
 
