@@ -19,7 +19,13 @@
 @font-face {
 	font-family: 'Noto Sans Devanagari';
 	src: url('https://thedoczek.github.io/scripts/devanagari/NotoSansDevanagari.ttf');
-	src: url('arabic/NotoSansArabic.ttf');
+	src: url('devanagari/NotoSansDevanagari.ttf');
+}
+
+@font-face {
+	font-family: 'Noto Sans Georgian';
+	src: url('https://thedoczek.github.io/scripts/georgian/NotoSansGeorgian.ttf');
+	src: url('georgian/NotoSansGeorgian.ttf');
 }
 
 @font-face {
