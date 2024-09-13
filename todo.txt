@@ -1,49 +1,5 @@
-Script Lang	Users	Notes
-
-ALPHABETS (Easy):
-Adlam	1 	37mln
-Armenian	1	5.3mln
-Braille	many	worldwide
-Coptic	1	10mln	liturgical use
-Cyryllic	many	250mln
-Fraser	1	500k
-Georgian	1	4mln
-Glagolitic	0	0	dead script (might still do it though)
-Greek	1	13.5mln
-Hanifi Rohingya	1	2,50mln
-Hangul	2	81mln
-Kayah Li	1	126k
-
-ABUGIDAS (Medium):
-Batak	7	3.3mln
-Bengali	8	290mln+
-Buhid	1	12k
-Chakma	1	700k
-Cham	1	490k
-Devanagari	many	1mld+
-Ge'ez	some	50mln	(Ethiopian)
-Gujarati	some	60mln
-Gunjala Gondi	1	3mln
-Gurmukhi	1	120mln
-Hanunoo	1	13k
-Javanese	some	100mln
-Kannada	1	50mln
-Khmer	1	17mln
-Lontara	3	6mln
-
-SYLLABARIES (More annoying abugidas):
-Bamum	1	500k
-Cherokee	1	5k
-Kana	1	125mln
-
-ABJADS (Very Hard):
-Arabic	Many	400mln+
-Hebrew	1	9mln
-
-
-Logographic (Never):
-
-Other:
-Duployan shorthand	?	?	Shorthand system - very hard
-
-
+Roadmap:
+1.Greek
+2. Georgian
+3. Bengali+Devanagari+Tirhuta
+4. Thai + Lao (might swap order with 3)
