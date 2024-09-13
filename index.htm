@@ -5,14 +5,14 @@
 		<meta charset="UTF-8">
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&family=Noto+Sans+Coptic&family=Noto+Sans+Ethiopic:wght@100..900&family=Noto+Sans+Glagolitic&family=Noto+Sans+Hanifi+Rohingya:wght@400..700&family=Noto+Sans+JP:wght@100..900&display=swap&family=Noto+Sans+Gujarati:wght@100..900&display=swap');
-			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&family=Noto+Sans+Malayalam:wght@100..900&family=Noto+Sans+Masaram+Gondi&family=Noto+Sans+Meetei+Mayek:wght@100..900&family=Noto+Sans+Myanmar:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@100..900&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@100..900&family=Noto+Sans+Masaram+Gondi&family=Noto+Sans+Meetei+Mayek:wght@100..900&family=Noto+Sans+Myanmar:wght@100;200;300;400;500;600;700;800;900&display=swap');
 			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Canadian+Aboriginal:wght@100..900&family=Noto+Sans+Khmer:wght@100..900&family=Noto+Sans+NKo&family=Noto+Sans+Oriya:wght@100..900&display=swap');
 			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Pahawh+Hmong&family=Noto+Sans+Runic&family=Noto+Sans+Sinhala:wght@100..900&family=Noto+Sans+Sundanese:wght@400..700&family=Noto+Sans+Tamil:wght@100..900&family=Noto+Sans+Telugu:wght@100..900&display=swap&family=Noto+Sans+Tirhuta');
 		</style>
 	</head>
-	<body align="center">
+	<body>
 		<h1>Scripts of the world</h1><hr>
-		<table class="title" align="center"><tr>
+		<table class="title"><tr>
 			<td><span style="font-size: 30px; color: #e0e8ffc0">/ðɛdɔt͡ʂɛk/<br><c>IPA</c></span></td>
 			<td><span style="font-size: 30px; color: #e0e8ffc0">Thedoczek<br><c>Latin</c></span></td>
 		</tr></table>
@@ -39,7 +39,7 @@
 			<td><na href="" style="font-family: 'Noto Sans', 'Noto Sans Khmer';">ដិដុចិក<br><c>Khmer</c></na></td>
 			<td><na href="" style="font-family: 'Noto Sans', 'Noto Sans Ethiopic';">ዴዶቼክ<br><c>Ge'ez</c></na></td>
 			<td><na href="" style="font-family: 'Noto Sans', 'Noto Sans Gujarati';">દેદોચેક્<br><c>Gujarati</c></na></td>
-			<td><na href="" style="font-family: 'Noto Sans', 'Noto Sans Lao';">ແດະເດາະແຈັກ<br><c>Lao</c></na></td>
+			<td><na href="" style="font-family: 'Noto Sans', 'Noto Sans Lao Normal';" id="lao">ແດະເດາະແຈັກ<br><c>Lao</c></na><tg onclick="toggleLoops()">Toggle loops</tg></td>
 			<td><na href="" style="font-family: 'Noto Sans', 'Noto Sans Malayalam';">ഡെഡൊചെക്<br><c>Malayalam</c></na></td>
 			<td><na href="" style="font-family: 'Noto Sans', 'Noto Sans Meetei Mayek';">ꯗꯦꯗꯣꯆꯦꯛ<br><c>Meitei Mayek</c></na></td>
 			<td><na href="" style="font-family: 'Noto Sans', 'Noto Sans Oriya';">ଦେଦୋଚେକ‍୍<br><c>Odia</c></na></td>
@@ -47,7 +47,7 @@
 			<td><na href="" style="font-family: 'Noto Sans', 'Noto Sans Sundanese';">ᮓᮦᮓᮧᮎᮦᮊ᮪<br><c>Sundanese</c></na></td>
 			<td><na href="" style="font-family: 'Noto Sans', 'Noto Sans Tamil';">தெதொசெக்<br><c>Tamil</c></na></td>
 			<td><na href="" style="font-family: 'Noto Sans', 'Noto Sans Telugu';">దెదొచెక్<br><c>Telugu</c></na></td>
-			<td><na href="" style="font-family: 'Noto Sans', 'Noto Sans Thai';">แดะเดาะแจ็ก<br><c>Thai</c></na></td>
+			<td><na href="" style="font-family: 'Noto Sans', 'Noto Sans Thai Normal';" id="thai">แดะเดาะแจ็ก<br><c>Thai</c></na><tg onclick="toggleLoops()">Toggle loops</tg></td>
 			<td><na href="" style="font-family: 'Noto Sans', 'Noto Sans Tirhuta';">𑒠𑒺𑒠𑒽𑒔𑒺𑒏𑓂<br><c>Tirhuta</c></na></td>
 		</tr></table>
 		<h2>Syllabaries</h2>
@@ -58,5 +58,7 @@
 		<!-- TO CONSIDER:
 			- Pahawh Hmong and Pollard Miao - they're tonal, might be too hard 	
 		-->
+
+		<script async="" src="thai-lao/loops.js"></script>
 	</body>
 </html>

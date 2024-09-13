@@ -11,6 +11,27 @@
 }
 
 @font-face {
+	font-family: 'Noto Sans Thai Normal';
+	src: url('https://thedoczek.github.io/scripts/thai-lao/NotoSansThai.ttf');
+	src: url('thai-lao/NotoSansThai.ttf');
+}@font-face {
+	font-family: 'Noto Sans Thai Looped';
+	src: url('https://thedoczek.github.io/scripts/thai-lao/NotoSansThaiLooped.ttf');
+	src: url('thai-lao/NotoSansThaiLooped.ttf');
+}
+
+@font-face {
+	font-family: 'Noto Sans Lao Normal';
+	src: url('https://thedoczek.github.io/scripts/thai-lao/NotoSansLao.ttf');
+	src: url('thai-lao/NotoSansLao.ttf');
+}
+@font-face {
+	font-family: 'Noto Sans Lao Looped';
+	src: url('https://thedoczek.github.io/scripts/thai-lao/NotoSansLaoLooped.ttf');
+	src: url('thai-lao/NotoSansLaoLooped.ttf');
+}
+
+@font-face {
 	font-family: 'Noto Sans Mongolian';
 	src: url('https://thedoczek.github.io/scripts/mongolian/NotoSansMongolian.ttf');
 	src: url('mongolian/NotoSansMongolian.ttf');
@@ -58,15 +79,24 @@ body {
 	text-align: center;
 }
 
+c, na, tg {
+	display: inline;
+}
+
 c {
 	font-size: 0.75rem;
 }
 
-table.langs tr td c {
+tg {
+	font-size: 0.75rem;
+	font-style: italic;
+}
+
+table.langs tr td a c {
 	text-decoration: underline;
 }
 
-table.title tr td c {
+table.langs tr td tg, table.title tr td c {
 	text-decoration: none;	
 }
 
@@ -75,6 +105,7 @@ table {
 }
 table.title {
 	width: 50%;
+	margin: 0 auto;
 }
 tr {
 	width: 100%;
@@ -178,8 +209,7 @@ a, a:visited, table.langs tr td a:hover {
 	color: #e0f2ffc0;
 	text-decoration: none;
 }
-a:hover {
-	font-size: 1.5rem;
+a:hover, tg:hover {
 	color: #e0f2ff80
 }
 
@@ -192,7 +222,6 @@ na, table.langs tr td na:hover {
 	text-decoration: none;
 }
 na:hover {
-	font-size: 1.5rem;
 	color: #ffe0f280
 }
 
