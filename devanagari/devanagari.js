@@ -33,6 +33,7 @@ function latdev() {
 		if (["kh", "gh", "ch", "jh", "ṭh", "ḍh", "th", "dh", "ph", "bh"].includes(car[i]+car[i+1])) {
 			car[i] = car[i]+car[i+1];
 			car[i+1] = "";
+			vowcons[i+1] = "";
 		}
 		if (latc.includes(car[i]) && car[i+1] != "̥") {
 			car[i] = devc[latc.indexOf(car[i])]+"्";
