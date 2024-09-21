@@ -1,0 +1,191 @@
+<html>
+	<head>
+		<title>Devanagari script</title>
+		<link rel="stylesheet" href="../styles.css">
+		<meta charset="UTF-8">
+		<style>
+			.dev, table.dev tr td {
+				font-family: 'Noto Sans Devanagari';
+			}
+		</style>
+	</head>
+	<body align="center">
+		<h1>Devanagari script</h1><a href="../"><c>Back to scripts</c></a><hr>
+		<form name="form"><table class="two"><tr>
+			<td>
+				<textarea placeholder="Latin text" name="leftarea" id="leftarea" onclick="latdev()" onkeyup="latdev()"></textarea>
+			</td>
+			<!--<td>
+				<textarea placeholder="Devanagari text" name="rightarea" id="rightarea" class="dev" onclick="devlat()" onkeyup="devlat()"></textarea>
+			</td>-->
+			<td>
+				<div id="rightarea" class="dev"><span style="color: #e0f2ff80">Devanagari text<br>Backwards transliteration coming soon</span></div>
+			</td>
+		</tr></table></form>
+
+		<table class="letters dev" align="center"><tr>
+			<td>
+				अ<br><c>a<br>/ɐ/</c>
+			</td>
+			<td>
+				आ<br><c>ā A<br>/aː/</c>
+			</td>
+			<td>
+				ॲ<br><c>ê e=<br>/æ/</c>
+			</td>
+			<td>
+				ऑ<br><c>ô o=<br>/ɒ/</c>
+			</td>
+			<td>
+				इ<br><c>i<br>/i/</c>
+			</td>
+			<td>
+				ई<br><c>ī I<br>/iː/</c>
+			</td>
+			<td>
+				उ<br><c>u<br>/u/</c>
+			</td>
+			<td>
+				ऊ<br><c>ū U<br>/uː/</c>
+			</td>
+			<td>
+				ऎ<br><c>e<br>/e/</c>
+			</td>
+			<td>
+				ए<br><c>ē E<br>/eː/</c>
+			</td>
+			<td>
+				ऐ<br><c>ai<br>/ɑj/</c>
+			</td>
+			<td>
+				ऒ<br><c>o<br>/o/</c>
+			</td>
+			<td>
+				ओ<br><c>ō O<br>/oː/</c>
+			</td>
+			<td>
+				औ<br><c>au<br>/ɑw/</c>
+			</td>
+			<td>
+				ऋ<br><c>r̥ r=<br>/r̩/</c>
+			</td>
+			<td>
+				ॠ<br><c>r̥̄ R<br>/r̩ː/</c>
+			</td>
+			<td>
+				ऌ<br><c>l̥ l=<br>/l̩/</c>
+			</td>
+			<td>
+				ॡ<br><c>l̥̄ L<br>/l̩ː/</c>
+			</td>
+			<td>
+				◌ं<br><c>ṁ M<br>/◌̃/</c>
+			</td>
+			<td>
+				◌ः<br><c>ḥ H<br>/h/</c>
+			</td>
+		</tr><tr>
+			<td>
+				क<br><c>k<br>/k/</c>
+			</td>
+			<td>
+				ख<br><c>kh<br>/kʰ/</c>
+			</td>
+			<td>
+				ग<br><c>g<br>/ɡ/</c>
+			</td>
+			<td>
+				घ<br><c>gh<br>/ɡʱ/</c>
+			</td>
+			<td>
+				ङ<br><c>ṅ N=<br>/ŋ/</c>
+			</td>
+			<td>
+				च<br><c>c<br>/tʃ/</c>
+			</td>
+			<td>
+				छ<br><c>ch<br>/tʃʰ/</c>
+			</td>
+			<td>
+				ज<br><c>j<br>/dʒ/</c>
+			</td>
+			<td>
+				झ<br><c>jh<br>/dʒʱ/</c>
+			</td>
+			<td>
+				ञ<br><c>ñ N<br>/ɲ/</c>
+			</td>
+			<td>
+				ट<br><c>ṭ T<br>/ʈ/</c>
+			</td>
+			<td>
+				ठ<br><c>ṭh Th<br>/ʈʰ/</c>
+			</td>
+			<td>
+				ड<br><c>ḍ D<br>/ɖ/</c>
+			</td>
+			<td>
+				ढ<br><c>ḍh Dh<br>/ɖʱ/</c>
+			</td>
+			<td>
+				ण<br><c>ṇ n=<br>/ɳ/</c>
+			</td>
+			<td>
+				त<br><c>t<br>/t̪/</c>
+			</td>
+			<td>
+				थ<br><c>th<br>/t̪ʰ/</c>
+			</td>
+			<td>
+				द<br><c>d<br>/d̪/</c>
+			</td>
+			<td>
+				ध<br><c>dh<br>/d̪ʱ/</c>
+			</td>
+			<td>
+				न<br><c>n<br>/n/</c>
+			</td>
+			<td>
+				प<br><c>p<br>/p/</c>
+			</td>
+			<td>
+				फ<br><c>ph<br>/pʰ/</c>
+			</td>
+			<td>
+				ब<br><c>b<br>/b/</c>
+			</td>
+			<td>
+				भ<br><c>bh<br>/bʱ/</c>
+			</td>
+			<td>
+				म<br><c>m<br>/m/</c>
+			</td>
+			<td>
+				य<br><c>y<br>/j/</c>
+			</td>
+			<td>
+				र<br><c>r<br>/r/</c>
+			</td>
+			<td>
+				ल<br><c>l<br>/l/</c>
+			</td>
+			<td>
+				व<br><c>v<br>/ʋ/</c>
+			</td>
+			<td>
+				श<br><c>ś S=<br>/ʃ/</c>
+			</td>
+			<td>
+				ष<br><c>ṣ S<br>/ʂ/</c>
+			</td>
+			<td>
+				स<br><c>s<br>/s/</c>
+			</td>
+			<td>
+				ह<br><c>h<br>/ɦ/</c>
+			</td>
+		</tr></table>
+		
+		<script async="" src="devanagari.js"></script>
+	</body>
+</html>
