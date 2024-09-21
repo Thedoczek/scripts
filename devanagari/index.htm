@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Devanagari script</title>
+		<link rel="stylesheet" href="../styles.css">
+		<meta charset="UTF-8">
+		<style>
+			.dev, table.dev tr td {
+				font-family: 'Noto Sans Devanagari';
+			}
+		</style>
+	</head>
+	<body align="center">
+		<h1>Devanagari script</h1><a href="../"><c>Back to scripts</c></a><hr>
+		<form name="form"><table class="two"><tr>
+			<td>
+				<textarea placeholder="Latin text" name="leftarea" id="leftarea" onclick="latdev()" onkeyup="latdev()"></textarea>
+			</td>
+			<td>
+				<textarea placeholder="Devanagari text" name="rightarea" id="rightarea" class="dev" onclick="devlat()" onkeyup="devlat()"></textarea>
+			</td>
+		</tr></table></form>
+
+		<table class="letters dev" align="center"><tr>
+			<td>
+				ա<br><c>a<br>/ɑ/</c>
+			</td>
+		</tr></table>
+		
+		<script async="" src="devanagari.js"></script>
+	</body>
+</html>
