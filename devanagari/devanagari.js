@@ -4,12 +4,14 @@ lat2 = ["ā", "ī", "ū", "r̥", "r̥̄", "l̥", "l̥̄", "ē", "ê", "ō", "ô"
 latc = ["kh", "gh", "ch", "jh", "ṭh", "ḍh", "th", "dh", "ph", "bh", "k", "g", "ṅ", "c", "j", "ñ", "ṭ", "ḍ", "ṇ", "t", "d", "n", "p", "b", "m", "y", "r", "l", "v", "ś", "ṣ", "s", "h", "'"];
 devc = ["ख", "घ", "छ", "झ", "ठ", "ढ", "थ", "ध", "फ", "भ", "क", "ग", "ङ", "च", "ज", "ञ", "ट", "ड", "ण", "त", "द", "न", "प", "ब", "म", "य", "र", "ल", "व", "श", "ष", "स", "ह", "ऽ"];
 
-latv = ["a", "ai", "au", "ā", "i", "ī", "u", "ū", "r", "R", "l", "L", "e", "ē", "ê", "o", "ō", "ô", "ṁ", "ḥ"];
+latv = ["a", "ai", "au", "ā", "i", "ī", "u", "ū", "q", "Q", "x", "X", "e", "ē", "ê", "o", "ō", "ô", "ṁ", "ḥ"];
 devv = ["्", "ै", "ौ", "ा", "ि", "ी", "ु", "ू", "ृ", "ॄ", "ॢ", "ॣ", "ॆ", "े", "ॅ", "ॊ", "ो", "ॉ", "ं", "ः"];
 devvbig = ["अ", "ऐ", "औ", "आ", "इ", "ई", "उ", "ऊ", "ऋ", "ॠ", "ऌ", "ॡ", "ऎ", "ए", "ऍ", "ऒ", "ओ", "ऑ", "ं", "ः"];
 
+latn = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+devn = ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९"];
+
 function latdev() {
-	console.clear();
 	let car = document.form.leftarea.value;
 	
 	// Convert special characters while keeping cursor position
@@ -24,7 +26,11 @@ function latdev() {
 	
 	let vowcons = car;
 	// Update devanagari side
+	// numbers and punctuation
 	car = car.replace(new RegExp("\\.", "g"), "।");
+	for (let i = 0; i < latn.length; ++i) {
+		car = car.replace(new RegExp(latn[i], "g"), devn[i]);
+	}
 
 	// consonants
 	car = car.split("");
@@ -40,6 +46,8 @@ function latdev() {
 			vowcons[i] = "c,";
 		}
 		if (car[i+1] == "̥") {
+			if (car[i] == "l") {car[i] = "x";}
+			else if (car[i] == "r") {car[i] = "q";}
 			if (car[i+2] == "̄") {
 				car[i] = car[i].toUpperCase();
 				car[i+2] = "";
@@ -49,15 +57,8 @@ function latdev() {
 	}
 	car = car.join("");
 	vowcons = vowcons.join("");
-	/* vowels without a
-	for (let i = 1; i < latv.length; ++i) {
-		car = car.replace(new RegExp(latv[i], "g"), devv[i]);
-		vowcons = vowcons.replace(new RegExp(latv[i], "g"), "v");
-	}*/
 
 	// vowels, unnecesarry "," removal
-	console.log(car);
-	console.log(vowcons);
 	car = car.split("");
 	vowcons = vowcons.split("");
 	for (let i = 0; i < car.length; ++i) {
@@ -85,18 +86,8 @@ function latdev() {
 	}
 	car = car.join("");
 	vowcons = vowcons.join("");
-	console.log(car);
 
-	// right now rightarea is a div
-	// document.form.rightarea.value = car;
-
-	car = car.replace(/\n/g, "<br>");
-	
-	if (car != "") {
-		document.getElementById("rightarea").innerHTML = car;
-	} else {
-		document.getElementById("rightarea").innerHTML = "<span style=\"color: #e0f2ff80\">Devanagari text<br>Backwards transliteration coming soon</span>";
-	}
+	document.form.rightarea.value = car;
 
 	autoResize(document.getElementById("leftarea"));
 	autoResize(document.getElementById("rightarea"));
@@ -104,18 +95,46 @@ function latdev() {
 
 function devlat() {
 	let car = document.form.rightarea.value;
-	
+
+	// fix inconsistencies
+	car = car.replace(/ँ/g, "ं");
+	car = car.replace(new RegExp("\\.", "g"), "।");
+	for (let i = 0; i < latn.length; ++i) {
+		car = car.replace(new RegExp(latn[i], "g"), devn[i]);
+	}
+	document.form.rightarea.value = car;
+
+
 	// Update latin side
-	for (let i = 0; i < lat.length; ++i) {
-		car = car.replace(new RegExp(arm[i], "g"), lat[i]);
+	// consonants
+	for (let i = 0; i < latc.length; ++i) {
+		car = car.replace(new RegExp(devc[i], "g"), latc[i]+"a");
 	}
-	for (let i = 0; i < lat1.length; ++i) {
-		car = car.replace(new RegExp(lat1[i], "g"), lat2[i]);
+	// vowels
+	for (let i = 0; i < latv.length; ++i) {
+		if (i < latv.length-2) {
+			if (i > 0) {car = car.replace(new RegExp("a"+devv[i], "g"), latv[i]);}
+			car = car.replace(new RegExp(devvbig[i], "g"), latv[i]);
+		} else {
+			car = car.replace(new RegExp(devv[i], "g"), latv[i]);
+		}
 	}
+
+	// numbers and punctuation
+	car = car.replace(/।/g, ".");
+	for (let i = 0; i < latn.length; ++i) {
+		car = car.replace(new RegExp(devn[i], "g"), latn[i]);
+	}
+
 	console.log(car);
-	car = car.replace(/\\\./g, ".");
-	car = car.replace(/\\\?/g, "?");
+	car = car.replace(/a्/g, "");
+	car = car.replace(/q/g, "r̥");
+	car = car.replace(/Q/g, "r̥̄");
+	car = car.replace(/x/g, "l̥");
+	car = car.replace(/X/g, "l̥̄");
+	car = car.replace(/।/g, ".");
 	console.log(car);
+
 	document.form.leftarea.value = car;
 
 	autoResize(document.getElementById("leftarea"));
