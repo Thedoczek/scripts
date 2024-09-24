@@ -63,6 +63,10 @@ function latdev() {
 	vowcons = vowcons.split("");
 	for (let i = 0; i < car.length; ++i) {
 		if (latv.includes(car[i])) {
+			if (latv.includes(car[i] + car[i+1])) {
+				car[i] = car[i] + car[i+1];
+				car[i+1] = "";
+			}
 			if (i == 0) {
 				car[i] = devvbig[latv.indexOf(car[i])];
 				vowcons[i] = "V";
