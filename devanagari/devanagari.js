@@ -1,10 +1,10 @@
-lat1 = ["A", "I", "U", "r=", "R", "l=", "L", "E", "e=", "O", "o=", "M", "H", "T", "D", "N", "ñ=", "n=", "S", "ṣ="];
-lat2 = ["ā", "ī", "ū", "r̥", "r̥̄", "l̥", "l̥̄", "ē", "ê", "ō", "ô", "ṁ", "ḥ", "ṭ", "ḍ", "ñ", "ṅ", "ṇ", "ṣ", "ś"];
+lat1 = ["A", "I", "U", "r=", "R", "l=", "L", "E", "e=", "O", "o=", "M", "H", "T", "D", "N", "ñ=", "n=", "S", "ṣ=", "g=", "z=", "d="];
+lat2 = ["ā", "ī", "ū", "r̥", "r̥̄", "l̥", "l̥̄", "ē", "ê", "ō", "ô", "ṁ", "ḥ", "ṭ", "ḍ", "ñ", "ṅ", "ṇ", "ṣ", "ś", "ġ", "ž", "ṛ"];
 
-latc = ["kh", "gh", "ch", "jh", "ṭh", "ḍh", "th", "dh", "ph", "bh", "k", "g", "ṅ", "c", "j", "ñ", "ṭ", "ḍ", "ṇ", "t", "d", "n", "p", "b", "m", "y", "r", "l", "v", "ś", "ṣ", "s", "h", "'"];
-devc = ["ख", "घ", "छ", "झ", "ठ", "ढ", "थ", "ध", "फ", "भ", "क", "ग", "ङ", "च", "ज", "ञ", "ट", "ड", "ण", "त", "द", "न", "प", "ब", "म", "य", "र", "ल", "व", "श", "ष", "स", "ह", "ऽ"];
+latc = ["q", "x", "ġ", "z", "ž", "ṛh", "ṛ", "f", "kh", "gh", "ch", "jh", "ṭh", "ḍh", "th", "dh", "ph", "bh", "k", "g", "ṅ", "c", "j", "ñ", "ṭ", "ḍ", "ṇ", "t", "d", "n", "p", "b", "m", "y", "r", "l", "v", "ś", "ṣ", "s", "h", "'"];
+devc = ["क़", "ख़", "ग़", "ज़", "झ़", "ढ़", "ड़", "फ़", "ख", "घ", "छ", "झ", "ठ", "ढ", "थ", "ध", "फ", "भ", "क", "ग", "ङ", "च", "ज", "ञ", "ट", "ड", "ण", "त", "द", "न", "प", "ब", "म", "य", "र", "ल", "व", "श", "ष", "स", "ह", "ऽ"];
 
-latv = ["a", "ai", "au", "ā", "i", "ī", "u", "ū", "q", "Q", "x", "X", "e", "ē", "ê", "o", "ō", "ô", "ṁ", "ḥ"];
+latv = ["a", "ai", "au", "ā", "i", "ī", "u", "ū", "ř", "Ř", "ľ", "Ľ", "e", "ē", "ê", "o", "ō", "ô", "ṁ", "ḥ"];
 devv = ["्", "ै", "ौ", "ा", "ि", "ी", "ु", "ू", "ृ", "ॄ", "ॢ", "ॣ", "ॆ", "े", "ॅ", "ॊ", "ो", "ॉ", "ं", "ः"];
 devvbig = ["अ", "ऐ", "औ", "आ", "इ", "ई", "उ", "ऊ", "ऋ", "ॠ", "ऌ", "ॡ", "ऎ", "ए", "ऍ", "ऒ", "ओ", "ऑ", "ं", "ः"];
 
@@ -18,7 +18,7 @@ function latdev() {
 	for (let i = 0; i < lat1.length; ++i) {
 		car = car.replace(new RegExp(lat1[i], "g"), lat2[i]);
 	}
-	car = car.replace(new RegExp("[BCfFGJKPqQVwWxXYzZ]", "g"), "")
+	car = car.replace(new RegExp("[BCFGJKPQVwWXYZ]", "g"), "")
 	const cursorPos = document.form.leftarea.selectionEnd;
 	const diff = document.form.leftarea.value.length - car.length;
 	document.form.leftarea.value = car;
@@ -43,11 +43,13 @@ function latdev() {
 		}
 		if (latc.includes(car[i]) && car[i+1] != "̥") {
 			car[i] = devc[latc.indexOf(car[i])]+"्";
-			vowcons[i] = "c,";
+			console.log(i, vowcons[i]);
+			if (["q", "x", "ġ", "z", "ž", "ṛh", "ṛ", "f"].includes(vowcons[i])) {vowcons[i] = "c.,";}
+			else {vowcons[i] = "c,";}
 		}
 		if (car[i+1] == "̥") {
-			if (car[i] == "l") {car[i] = "x";}
-			else if (car[i] == "r") {car[i] = "q";}
+			if (car[i] == "l") {car[i] = "ľ";}
+			else if (car[i] == "r") {car[i] = "ř";}
 			if (car[i+2] == "̄") {
 				car[i] = car[i].toUpperCase();
 				car[i+2] = "";
@@ -61,6 +63,8 @@ function latdev() {
 	// vowels, unnecesarry "," removal
 	car = car.split("");
 	vowcons = vowcons.split("");
+	console.log(car);
+	console.log(vowcons);
 	for (let i = 0; i < car.length; ++i) {
 		if (latv.includes(car[i])) {
 			if (latv.includes(car[i] + car[i+1])) {
