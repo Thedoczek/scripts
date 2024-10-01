@@ -77,26 +77,27 @@
 	font-size: 125%;
 }
 
-* {
-	font-family: 'Noto Sans';
-}
-
 h1 {
 	margin: 0px;
 }
 body {
+	font-family: 'Noto Sans';
 	background-color: #003660;
 	color: #e0f2ff;
 	font-size: 1rem;
 	text-align: center;
 }
 
-c, na, tg {
+c, na, tg, one {
 	display: inline;
 }
 
 c {
 	font-size: 0.75rem;
+}
+
+one {
+	font-size: 1rem;
 }
 
 tg {
@@ -169,6 +170,7 @@ table.title tr td {
 	width: 50%;
 	border: none;
 }
+
 @media screen and (max-width:1440px) {
 	td{width:33%;}
 	table.title {width: 66%;}
@@ -208,6 +210,7 @@ textarea {
 	overflow: hidden;
 	font-size: 1rem;
 	color: #e0e8ff;
+	font-family: inherit;
 }
 textarea::placeholder {
 	color: #e0f2ff80
