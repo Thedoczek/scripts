@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Greek alphabet</title>
+		<link rel="stylesheet" href="../styles.css">
+		<meta charset="UTF-8">
+		<style>
+			.grk, table.grk tr td {
+				font-family: 'Noto Sans';
+				text-align: left;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Greek alphabet</h1><a href="../"><c>Back to scripts</c></a><hr>
+		<form name="form"><table class="two"><tr>
+			<td>
+				<textarea placeholder="Latin transliteration (ELOT1)" name="latinInput" id="latinInput" onclick="latgrk()" onkeyup="latgrk()"></textarea>
+			</td>
+			<td>
+				<textarea placeholder="Greek text" name="greekInput" id="greekInput" class="grk" onclick="grklat()" onkeyup="grklat()"></textarea>
+			</td>
+		</tr><tr>
+			<td>
+				<div id="transcription" class="grk"><span style="color: #e0f2ff80">Latin transcription (ELOT2/BGN hybrid)</span></div>
+			</td>
+			<td>
+				<div id="ipa" class="grk"><span style="color: #e0f2ff80">IPA approximation</span></div>
+			</td>
+		</tr></table></form>
+
+		<table class="letters grk"><tr>
+		</tr></table>
+		
+		<script async="" src="moderngreek.js"></script>
+	</body>
+</html>
