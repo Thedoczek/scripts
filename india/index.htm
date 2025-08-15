@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Devanagari script</title>
+		<link rel="stylesheet" href="../styles.css">
+		<meta charset="UTF-8">
+		<style>
+			.dev, table.dev tr td {
+				font-family: 'Noto Sans Devanagari', 'Noto Sans';
+			}
+			.gur, table.gur tr td {
+				font-family: 'Noto Sans Gurmukhi', 'Noto Sans';
+			}
+			.guj, table.guj tr td {
+				font-family: 'Noto Sans Gujarati', 'Noto Sans';
+			}
+			.ben, table.ben tr td {
+				font-family: 'Noto Sans Bengali', 'Noto Sans';
+			}
+			.odi, table.odi tr td {
+				font-family: 'Noto Sans Oriya', 'Noto Sans';
+			}
+			.tam, table.tam tr td {
+				font-family: 'Noto Sans Tamil', 'Noto Sans';
+			}
+			.mal, table.mal tr td {
+				font-family: 'Noto Sans Malayalam', 'Noto Sans';
+			}
+			.kan, table.kan tr td {
+				font-family: 'Noto Sans Kannada', 'Noto Sans';
+			}
+			.tel, table.tel tr td {
+				font-family: 'Noto Sans Telugu', 'Noto Sans';
+			}
+			.sin, table.sin tr td {
+				font-family: 'Noto Sans Sinhala', 'Noto Sans';
+			}
+		</style>
+	</head>
+	<body align="center">
+		<h1>Scripts of southern Asia</h1><a href="../"><c>Back to scripts</c></a><hr>
+		<form name="form"><table class="three"><tr>
+			<td>
+				<textarea placeholder="Latin text" name="latinput" id="latinput" onclick="latind()" onkeyup="latind()"></textarea>
+			</td>
+			<td>
+				<textarea placeholder="Devanagari text" name="devinput" id="devinput" class="dev" onclick="indlat('dev')" onkeyup="indlat('dev')"></textarea>
+			</td>
+			<td>
+				<textarea placeholder="Gurmukhi text" name="gurinput" id="gurinput" class="gur" onclick="indlat('gur')" onkeyup="indlat('gur')"></textarea>
+			</td>
+		</tr><tr>
+			<td>
+				<textarea placeholder="Gujarati text" name="gujinput" id="gujinput" class="guj" onclick="indlat('guj')" onkeyup="indlat('guj')"></textarea>
+			</td>
+			<td>
+				<textarea placeholder="Bengali text" name="beninput" id="beninput" class="ben" onclick="indlat('ben')" onkeyup="indlat('ben')"></textarea>
+			</td>
+			<td>
+				<textarea placeholder="Odia text" name="odiinput" id="odiinput" class="odi" onclick="indlat('odi')" onkeyup="indlat('odi')"></textarea>
+			</td>
+		</tr><tr>
+			<td>
+				<textarea placeholder="Tamil text" name="taminput" id="taminput" class="tam" onclick="indlat('tam')" onkeyup="indlat('tam')"></textarea>
+			</td>
+			<td>
+				<textarea placeholder="Malayalam text" name="malinput" id="malinput" class="mal" onclick="indlat('mal')" onkeyup="indlat('mal')"></textarea>
+			</td>
+			<td>
+				<textarea placeholder="Kannada text" name="kaninput" id="kaninput" class="kan" onclick="indlat('kan')" onkeyup="indlat('kan')"></textarea>
+			</td>
+		</tr><tr>
+			<td>
+				<textarea placeholder="Telugu text" name="telinput" id="telinput" class="tel" onclick="indlat('tel')" onkeyup="indlat('tel')"></textarea>
+			</td>
+			<td>
+				<textarea placeholder="Sinhala text" name="sininput" id="sininput" class="sin" onclick="indlat('sin')" onkeyup="indlat('sin')"></textarea>
+			</td>
+		</tr></table></form>
+
+		<div class="letters dev" align="center"><tr>Use ISO 15919 (normal or 7-bit)<br><c>But "e" and "o" for long e/o,<br>".e" and ".o" for short e/o</c></div>
+		
+		<script async="" src="india.js"></script>
+	</body>
+</html>

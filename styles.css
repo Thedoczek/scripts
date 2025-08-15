@@ -39,20 +39,62 @@
 
 @font-face {
 	font-family: 'Noto Sans Devanagari';
-	src: url('https://thedoczek.github.io/scripts/devanagari/NotoSansDevanagari.ttf');
-	src: url('devanagari/NotoSansDevanagari.ttf');
+	src: url('https://thedoczek.github.io/scripts/india/NotoSansDevanagari.ttf');
+	src: url('india/NotoSansDevanagari.ttf');
 }
 
 @font-face {
 	font-family: 'Noto Sans Bengali';
-	src: url('https://thedoczek.github.io/scripts/bengali/NotoSansBengali.ttf');
-	src: url('bengali/NotoSansBengali.ttf');
+	src: url('https://thedoczek.github.io/scripts/india/NotoSansBengali.ttf');
+	src: url('india/NotoSansBengali.ttf');
 }
 
 @font-face {
 	font-family: 'Noto Sans Oriya';
-	src: url('https://thedoczek.github.io/scripts/odia/NotoSansOriya.ttf');
-	src: url('odia/NotoSansOriya.ttf');
+	src: url('https://thedoczek.github.io/scripts/india/NotoSansOriya.ttf');
+	src: url('india/NotoSansOriya.ttf');
+}
+
+@font-face {
+	font-family: 'Noto Sans Gujarati';
+	src: url('https://thedoczek.github.io/scripts/india/NotoSansGujarati.ttf');
+	src: url('india/NotoSansGujarati.ttf');
+}
+
+@font-face {
+	font-family: 'Noto Sans Gurmukhi';
+	src: url('https://thedoczek.github.io/scripts/india/NotoSansGurmukhi.ttf');
+	src: url('india/NotoSansGurmukhi.ttf');
+}
+
+@font-face {
+	font-family: 'Noto Sans Kannada';
+	src: url('https://thedoczek.github.io/scripts/india/NotoSansKannada.ttf');
+	src: url('india/NotoSansKannada.ttf');
+}
+
+@font-face {
+	font-family: 'Noto Sans Sinhala';
+	src: url('https://thedoczek.github.io/scripts/india/NotoSansSinhala.ttf');
+	src: url('india/NotoSansSinhala.ttf');
+}
+
+@font-face {
+	font-family: 'Noto Sans Tamil';
+	src: url('https://thedoczek.github.io/scripts/india/NotoSansTamil.ttf');
+	src: url('india/NotoSansTamil.ttf');
+}
+
+@font-face {
+	font-family: 'Noto Sans Malayalam';
+	src: url('https://thedoczek.github.io/scripts/india/NotoSansMalayalam.ttf');
+	src: url('india/NotoSansMalayalam.ttf');
+}
+
+@font-face {
+	font-family: 'Noto Sans Telugu';
+	src: url('https://thedoczek.github.io/scripts/india/NotoSansTelugu.ttf');
+	src: url('india/NotoSansTelugu.ttf');
 }
 
 @font-face {
